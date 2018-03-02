@@ -13,9 +13,9 @@ yyerror(char *s) {
 
 %%
 
-arg: DIGIT | FLOAT | STRING | SYMBOL | func;
+arg: DIGIT | FLOAT | STRING | SYMBOL | expr;
 args: | args arg;
-func:  '(' SYMBOL args ')';
+expr:  '(' SYMBOL args ')';
 
 %%
 
