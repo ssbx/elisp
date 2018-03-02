@@ -1,5 +1,8 @@
-.PHONY: run clean
+.PHONY: run clean test
+CFLAGS = -Wall
 
+test: elisp
+	cat test.lisp | ./elisp
 
 elisp: lex.yy.o y.tab.o
 	cc lex.yy.o y.tab.o -o elisp
